@@ -1,0 +1,259 @@
+@import mixins
+@import ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables
+@import ../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins
+@import ../bower_components/breakpoint-sass/stylesheets/breakpoint
+
+body
+	.faixa
+		width: 100%
+		height: 60px
+		background-color: $azul
+	.menu
+		ul 
+			float: right
+			margin-top: -48px
+			display: flex
+			list-style: none
+			li 
+				padding-right: 20px
+				a	
+					color: $cinza
+					font-size: 25px
+					+transition(.2s)
+					&:hover,
+						text-decoration: none
+						color: $branco
+						border-bottom: solid 2px 
+						padding-bottom: 5px
+			+breakpoint($tablet)
+				display: none			
+	.menu-responsivo
+		position: fixed
+		width: 150px
+		height: 100%
+		left: -150px
+		top: 0
+		z-index: 9999
+		+gradient(0deg, $azul-logo, $preto)
+		+transition(.4s)
+		&.ativo
+			left: 0px
+		ul 
+			list-style: none
+			margin-left: -38px
+			li 
+				a
+					padding: 7px
+					display: block
+					color: $branco
+					font-size: 25px
+					+transition(.2s)
+					&:hover,
+					&:focus
+						text-decoration: none
+						background-color: $branco
+						color: $preto
+	.toggle
+		padding-left: 0px
+		margin-top: -50px
+		margin-right: 0px
+		display: none
+		float: right
+		a 
+			border: solid 1px
+		i
+			font-size: 40px
+			color: $cinza
+		+breakpoint($tablet)
+			display: block
+	.logo
+		margin-top: -60px
+		+breakpoint($tablet)
+			margin-top: 0		
+		+breakpoint($celubot)
+			img 
+				width: 350px
+				+img-responsive
+				margin: 0 auto					
+header
+	min-height: 615px
+	background:
+		image: url('../img/slide1.jpg') 
+		repeat: no-repeat
+		position: top center
+		size: cover
+		width: 100%
+		height: 100%	
+		attachment: fixed
+	position: relative
+
+	h1
+		margin-top: 50px
+		text-align: center
+		text-shadow: 2px -2px 10px $preto 
+		font-family: Calisto mt
+		font-weight: bold
+		font-size: 60px
+		color: $branco
+		span 
+			font-size: 80px
+			font-style: italic
+.meio
+	.corpo
+		background-color: $azul
+	.conteudo
+		h2 
+			margin-top: 100px
+			margin-left: 100px
+			text-shadow: 2px -2px 6px $preto 
+			text-transform: uppercase
+			font-family: Calisto mt
+			font-weight: bold
+			font-size: 30px
+			font-style: italic
+			color: $branco
+			+breakpoint($celubot)
+				margin-top: 100px
+				margin-left: 20px
+		h3
+			margin-top: 50px
+			margin-bottom: 100px	
+			margin-left: 100px
+			margin-right: 100px		
+			text-align: justify
+			text-shadow: 2px -2px 6px $preto 
+			font-family: Calisto mt
+			font-weight: bold
+			font-size: 30px
+			font-style: italic
+			color: $branco
+			+breakpoint($celubot)
+				margin-bottom: 100px
+				margin-left: 20px
+				margin-right: 20px
+	.fundostaff
+		min-height: 516px
+		background:
+			image: url('../img/fundostaff.jpg')		
+			repeat: no-repeat
+			position: top center
+			width: 100%
+			height: 100%
+			attachment: fixed
+			size: cover
+		position: relative
+		+breakpoint($tablet)
+			background-size: auto
+		+breakpoint($celubot)
+			background-size: 900px	
+
+	.staff
+		h2 
+			margin-top: 100px
+			margin-bottom: 50px
+			text-align: center
+			text-shadow: 2px -2px 6px $preto 
+			font-family: Calisto mt
+			font-weight: bold
+			font-size: 50px
+			font-style: italic
+			color: $branco		
+		img
+			+img-responsive 
+			margin: 0 auto	
+			padding-bottom: 100px	
+footer
+	.contato
+		width: 100%
+		height: 800px
+		background-color: $cinza
+		+breakpoint($celubot)
+			height: 1550px
+		.localizacao
+			+make-sm-column(6)
+			margin-top: 50px
+		.social
+			+make-sm-column(6)
+			.rene 
+				margin-top: 50px
+			h2 
+				margin-top: 0px
+				margin-left: 0px
+				margin-right: 0
+				text-shadow: 2px -2px 6px #666666 
+				font-family: Calisto mt
+				font-weight: bold
+				font-style: italic
+				+breakpoint($celubot)
+					margin-top: 10px
+					margin-left: 0
+			h3 
+				margin-top: -10px
+				margin-left: 0px
+				margin-right: 0
+				text-shadow: 2px -2px 6px #666666 
+				font-family: Calisto mt
+				font-weight: bold
+				font-size: 15px
+			span 
+				color: #666666
+				padding-left: 5px	
+				font-size: 18px
+				+breakpoint($celubot)
+					margin-top: 0
+					margin-left: 0
+					text-align: center			
+			.fa-facebook-square 
+				margin-top: 50px
+				margin-left: 0px
+				margin-right: 0
+				font-size: 50px
+				color: $azul-face
+				+transition(.4s)
+				&:hover
+					color: #666666
+				+breakpoint($celubot)
+					margin-top: 50px
+					margin-left: 0
+			.fa-whatsapp
+				margin-top: 0px
+				margin-left: 0px
+				margin-right: 0
+				margin-bottom: 30px
+				font-size: 20px		
+				color: $zap
+				+breakpoint($celubot)
+					margin-top: 0
+					margin-left: 0
+			iframe
+				margin-top: 20px
+				margin-left: 0px		
+				+breakpoint($celubot)
+					margin-left: 0px			
+		a 
+			.fa-arrow-up	
+				float: right
+				margin-top: -10px
+				margin-right: 20px
+				font-size: 50px
+				color: #666666
+				+transition(.3s)
+				&:hover
+					color: $azul-face
+							
+
+	.rodape
+		width: 100%
+		height: 60px
+		background-color: #666666	
+		h2 
+			text-align: center
+			margin-top: 25px
+			font-size: 15px	
+			font-family: Calisto mt
+			color: $branco
+			a 
+				text-decoration: none
+				color: $branco
+				&:hover
+					border-bottom: solid 1px
